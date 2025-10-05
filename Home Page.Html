@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Space Homes | By | Astro Haven Team</title>
+    <link rel="shortcut icon" href="Images/Team Logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Home Page CSS.Css">
+</head>
+<body>
+    <aside id="AsideBar">
+        <div class="List">
+            <b>Sources:</b>
+            <label><label>Nasa Data & Recources:</label> <br>
+                To get an Infromation about our Project
+            </label>
+            <label><label>Canadian Space Agency (CSA):</label><br>
+                To get an Infromation about our Project
+            </label>
+            <label><label>ChatGPT AI:</label><br>
+                To Generate to Us ISS images and SkyLab images
+            </label>
+            <label><label>W3 Schools:</label><br>
+                To help us in code
+            </label>
+        </div>
+        <div class="List">
+            <b>Team Members:</b>
+            <span style="margin-bottom: 2.5vmin;">Adham Mostafa</span>
+            <span style="margin-bottom: 2.5vmin;">Aysel Amr</span>
+            <span style="margin-bottom: 2.5vmin;">Saif Amr</span>
+            <span style="margin-bottom: 2.5vmin;">Eyad Yassin</span>
+        </div>
+    </aside>
+    <button onclick="toggleAsideBar()" id="AsideBarBTN">&#9776;</button>
+    <center id="CenterOne">
+        <header>
+            <h1>
+                <sup>ASTRO</sup><br>
+                <sub>HAVEN</sub>
+                <p>Homes in Space</p>
+            </h1>
+        </header>
+    </center>
+        <main>
+            <h1>Do You know:</h1>
+            <b>
+                There are more than one Home in Space like:
+                <ul>
+                    <li>International Space Station(ISS)</li>
+                    <li>Sky Lab</li>
+                </ul>
+            </b>
+        </main>
+        <main>
+            <h1>Some information about Homes in the space:</h1>
+            <center>
+                <img src="Images/Smart Art One.png" style="width: 100%;">
+                <img src="Images/Smart Art Two.png" style="width: 100%;">
+            </center>
+        </main>
+        <main>
+            <h1>Examples of Homes in the space:</h1>
+            <center style="display: flex;flex-direction: row;">
+                <div class="Example">
+                    <img src="Images/SkyLab.jpg">
+                    <a href="Sky Lab Page.Html" id="ForMoreButton">For More</a>
+                </div>
+                <div class="Example">
+                    <img src="Images/ISS.jpg">
+                    <a href="ISS Page.Html" id="ForMoreButton">For More</a>
+                </div>
+            </center>
+            <h1>Our Model:</h1>
+            <center>
+                <div class="Example">
+                    <img src="Images/ModelImage.png">
+                    <a href="Our Model Page.html" id="ForMoreButton">For More</a>
+                </div>
+            </center>
+        </main>
+    <script>
+        const AsideBar = document.getElementById('AsideBar');     
+        function toggleAsideBar() {
+            AsideBar.classList.toggle('open');
+            const button = document.getElementById('AsideBarBTN');
+            if (AsideBar.classList.contains('open')) {
+                button.innerHTML = '&#10005;';
+                button.style.marginLeft = '400vw';
+            } else {
+                button.innerHTML = '&#9776;';
+                button.style.marginLeft = '5px';
+            }
+        }
+        document.addEventListener('click', function(event) {
+            const isClickInsideAside = AsideBar.contains(event.target);
+            const isClickOnButton = event.target.closest('button') === document.getElementById('AsideBarBTN');
+            
+            if (!isClickInsideAside && !isClickOnButton && AsideBar.classList.contains('open')) {
+                toggleAsideBar();
+            }
+        });
+    </script>
+</body>
+</html>
